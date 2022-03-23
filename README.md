@@ -1,16 +1,14 @@
-# Pixel Art Maker Project
+# Project review 
 
-## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* No additional **CSS** was used 
+* No additional __HTML__ was used 
 
-## Instructions
+## Steps to execute the grid : 
+* Input the height and width 
+* Select the color 
+* Submit 
 
-To get started, open `designs.js` and start building out the app's functionality.
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+## Note : 
+* The colors cannot be changed after submision 
+* For a new grid the page should be reloaded .

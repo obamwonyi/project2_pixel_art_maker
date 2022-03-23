@@ -16,15 +16,19 @@ form.addEventListener('submit',e =>
 
     //fetching the value of gridWidth from the input .
     const gridWidth = document.querySelector("#inputWidth").value;
+    
+    // fetch the color value from the input 
+    const colorValue = document.querySelector("#colorPicker").value;
 
-    console.log(gridHeight,gridWidth);
+  
 
-    makeGrid(gridHeight,gridWidth);
+
+    makeGrid(gridHeight,gridWidth,colorValue);
 })
 
 // When size is submitted by the user, call makeGrid()
 
-function makeGrid(canvasHeight,canvasWidth) {
+function makeGrid(canvasHeight,canvasWidth,colorVal) {
 
 // Your code goes here!
     //storing the canvas region 
@@ -35,20 +39,25 @@ function makeGrid(canvasHeight,canvasWidth) {
     //pre creating a <td> element to be appended.
     const td = document.createElement('td'); 
 
-    
 
     //creating a canvas with repect to the height and width provided 
-    for (i = 0; i < 10; i++) 
+    for (i = 0; i < canvasHeight; i++) 
     {
         //appending the tr(table row ) to the table 
         const appendTableRow = canvas.appendChild(tr.cloneNode());
 
         
-        for(j = 0; j < 10; j++)
+        for(j = 0; j < canvasWidth; j++)
         {
                 //appending the td to the tr in the table 
-                appendTableRow.appendChild(td.cloneNode());
-                continue;
+                const tableData = appendTableRow.appendChild(td.cloneNode());
+
+                //adding event listenner to every data created on click.
+                tableData.addEventListener('click', () => {
+                    tableData.style.backgroundColor = colorVal;
+                })
+            
+
         }
         
 
