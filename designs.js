@@ -17,8 +17,6 @@ const canvas = document.querySelector("#pixelCanvas");
 const colorPicker = document.querySelector("#colorPicker");
 let colorPickerValue = colorPicker.value;
 
-
-
 /*
 the function below (makeGrid()) is for creating the canvas this is done by creating dynamic elements with a nested for loop 
 the first loop creates the table row (tr) and inside every table row there is a couple of table data which is also created 
@@ -27,7 +25,6 @@ td: represent the cells of the grid
 tr: is simply the row to which each cells a attached . 
 */
 function makeGrid(canvasHeight, canvasWidth) {
-
   //creating a canvas with repect to the height and width provided
   for (i = 0; i < canvasHeight; i++) {
     //appending the tr(table row ) to the table
@@ -47,15 +44,13 @@ function makeGrid(canvasHeight, canvasWidth) {
   }
 }
 
-
 /*
 This is the callback function to prevent default submission 
 set the gridHeight and gridWidthe 
 and finally call the makeGrid() function,
 passing the gridHeight and gridWidth as arguments.
 */
-function setGrid(e)
-{
+function setGrid(e) {
   e.preventDefault();
 
   //fetching the value of gridHeight from the input .
@@ -72,12 +67,12 @@ The form event will fire when the value in the index page are submitted as shown
 addEventListener method.
 the second parameter is the callback created above its function(use) is highlighted in the comments above it 
 */
-form.addEventListener("submit",setGrid);
+form.addEventListener("submit", setGrid);
 
 /*
 This event is to run when the input field for id colorPicker is set . 
 Its function(use) is to reset the value of the color that will fill each cell of the grid
 */
-colorPicker.addEventListener("input",() =>{
+colorPicker.addEventListener("input", () => {
   colorPickerValue = colorPicker.value;
-})
+});
